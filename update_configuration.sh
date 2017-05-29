@@ -13,7 +13,14 @@ GIT_ADD="git add ${CONFIGURATION_FILE}"
 GIT_COMMIT="git commit -m \"${COMMIT_MESSAGE}\""
 GIT_PUSH="git push"
 
-eval $GIT_ADD
-eval $GIT_COMMIT
+COMMIT_TO_GIT=true
+
 echo $GIT_ADD
 echo $GIT_COMMIT
+echo $GIT_PUSH
+
+if $COMMIT_TO_GIT; then 
+	eval $GIT_ADD
+	eval $GIT_COMMIT 
+	eval $GIT_PUSH 
+fi
